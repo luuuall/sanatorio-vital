@@ -28,8 +28,8 @@ const serviciosDestacados = servicios.slice(0, 6);
         <span class="eyebrow">Nuestros servicios</span>
         <h2 class="section-title">Todo lo que tu salud necesita, en un solo lugar</h2>
         <p class="section-sub">
-          Consultas, estudios y urgencias con más de 30 especialidades y un equipo que te acompaña
-          en cada etapa.
+          Consultas, estudios y urgencias con {especialidades.length} especialidades y un equipo
+          que te acompaña en cada etapa.
         </p>
       </div>
       <div class="grid grid-3">
@@ -73,7 +73,7 @@ const serviciosDestacados = servicios.slice(0, 6);
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Especialidades</span>
-        <h2 class="section-title">Más de 30 especialidades médicas</h2>
+        <h2 class="section-title">{especialidades.length} especialidades médicas</h2>
         <p class="section-sub">
           Un equipo multidisciplinario que trabaja en red para darte un diagnóstico integral.
         </p>
@@ -95,7 +95,7 @@ const serviciosDestacados = servicios.slice(0, 6);
         <span class="eyebrow">Testimonios</span>
         <h2 class="section-title">La confianza de quienes nos eligen</h2>
       </div>
-      <div class="grid grid-3">
+      <div class="grid grid-2">
         {testimonios.map((t) => (
           <figure class="testimonial">
             <div class="testimonial__stars" aria-label="5 de 5 estrellas">

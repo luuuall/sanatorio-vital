@@ -11,6 +11,12 @@ export const site = {
   x: 'https://x.com',
 };
 
+export const horarios = [
+  { dias: 'Lunes a viernes', hora: '7:00 – 21:00 hs' },
+  { dias: 'Sábados', hora: '8:00 – 14:00 hs' },
+  { dias: 'Urgencias', hora: '24 horas, todos los días' },
+];
+
 export const stats = [
   { value: '25+', label: 'Años de experiencia' },
   { value: '320k+', label: 'Pacientes atendidos' },

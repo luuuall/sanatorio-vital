@@ -1,6 +1,8 @@
 ---
 import Icon from './Icon.astro';
-import { site } from '../data/site';
+import { site, stats } from '../data/site';
+
+const [, pacientes, profesionales] = stats;
 
 const highlight = [
   'Turnos online 24/7',
@@ -54,11 +56,11 @@ const highlight = [
 
       <div class="hero__card-grid">
         <div class="hero__stat">
-          <strong>320k+</strong>
+          <strong>{pacientes.value}</strong>
           <span>pacientes atendidos</span>
         </div>
         <div class="hero__stat">
-          <strong>120+</strong>
+          <strong>{profesionales.value}</strong>
           <span>profesionales</span>
         </div>
       </div>

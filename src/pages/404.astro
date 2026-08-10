@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página no encontrada — Sanatorio Vital"
+  description="La página que buscás no existe. Volvé al inicio del Sanatorio Vital o contactanos para ayudarte."
+>
+  <section class="notfound">
+    <div class="container notfound__inner">
+      <span class="eyebrow">Error 404</span>
+      <h1>No encontramos esa página</h1>
+      <p class="notfound__sub">
+        La dirección puede estar mal escrita o la página ya no existe. Te ayudamos a volver al
+        camino.
+      </p>
+      <div class="notfound__actions">
+        <a href="/" class="btn btn-primary">Volver al inicio</a>
+        <a href="/contacto" class="btn btn-outline">Contactanos</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound {
+    padding: 96px 0;
+  }
+
+  .notfound__inner {
+    max-width: 640px;
+    text-align: center;
+  }
+
+  .notfound h1 {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+
+  .notfound__sub {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+
+  .notfound__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+</style>

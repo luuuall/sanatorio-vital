@@ -33,14 +33,20 @@ const path = Astro.url.pathname;
 
     <a href="/contacto" class="btn btn-primary header__cta">Solicitar turno</a>
 
-    <button class="header__burger" aria-label="Abrir menú" data-burger>
+    <button
+      class="header__burger"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      data-burger
+    >
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
 
-  <nav class="header__mobile" aria-label="Navegación móvil" data-mobile-nav>
+  <nav id="mobile-nav" class="header__mobile" aria-label="Navegación móvil" data-mobile-nav>
     {links.map((link) => (
       <a
         href={link.href}
