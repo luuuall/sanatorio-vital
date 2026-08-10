@@ -1,0 +1,259 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title;
+const pageDescription = description ?? 'Sanatorio Vital — Tu salud es nuestra prioridad. Atención médica integral, especialidades, diagnóstico por imágenes y urgencias.';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#0d6e6e" />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --brand-50: #e6f7f7;
+    --brand-100: #ccefee;
+    --brand-200: #99dfde;
+    --brand-300: #66cfcf;
+    --brand-400: #33bfbf;
+    --brand-500: #0d9e9e;
+    --brand-600: #0d6e6e;
+    --brand-700: #0a5555;
+    --brand-800: #073d3d;
+    --brand-900: #042828;
+
+    --accent: #1fb6a3;
+    --accent-dark: #158d7e;
+
+    --ink: #16323b;
+    --ink-soft: #4d6a72;
+    --surface: #ffffff;
+    --surface-alt: #f2f8f8;
+
+    --border: #dce9e9;
+
+    --radius: 16px;
+    --radius-lg: 24px;
+
+    --shadow-sm: 0 2px 8px rgba(13, 110, 110, 0.08);
+    --shadow-md: 0 8px 28px rgba(13, 110, 110, 0.12);
+    --shadow-lg: 0 20px 50px rgba(13, 110, 110, 0.18);
+
+    --container: 1160px;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section {
+    padding: 88px 0;
+  }
+
+  .section-alt {
+    background: var(--surface-alt);
+  }
+
+  .section-head {
+    max-width: 640px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-600);
+    background: var(--brand-100);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--ink-soft);
+    font-size: 1.0625rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background: var(--brand-600);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-700);
+  }
+
+  .btn-accent {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-accent:hover {
+    background: var(--accent-dark);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border-color: var(--brand-600);
+    color: var(--brand-600);
+  }
+
+  .btn-outline:hover {
+    background: var(--brand-50);
+  }
+
+  .btn-light {
+    background: #fff;
+    color: var(--brand-700);
+  }
+
+  .btn-light:hover {
+    background: var(--brand-50);
+  }
+
+  .grid {
+    display: grid;
+    gap: 28px;
+  }
+
+  @media (min-width: 768px) {
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .section {
+      padding: 64px 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>

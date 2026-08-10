@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { servicios, especialidades } from '../data/site';
+---
+
+<Layout
+  title="Servicios — Sanatorio Vital"
+  description="Conocé todos los servicios y especialidades del Sanatorio Vital: clínica, diagnóstico por imágenes, laboratorio, urgencias y más."
+>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <span class="eyebrow">Servicios médicos</span>
+      <h1>Servicios y especialidades</h1>
+      <p>
+        Más de 30 especialidades, estudios de alta complejidad y guardia 24 hs. Todo coordinado por
+        un equipo que piensa en tu salud de forma integral.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        {servicios.map((s) => (
+          <ServiceCard {...s} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Todas las especialidades</span>
+        <h2 class="section-title">Profesionales que cubren toda la salud</h2>
+        <p class="section-sub">
+          Contamos con especialistas acreditados en cada una de estas áreas.
+        </p>
+      </div>
+      <ul class="specs">
+        {especialidades.map((e) => (
+          <li>
+            <Icon name="check" size={15} />
+            {e}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title">¿No encontrás lo que buscás?</h2>
+      <p class="cta__sub">
+        Consultanos y te orientamos sobre el especialista o estudio que necesitás.
+      </p>
+      <div class="cta__actions">
+        <a href="/contacto" class="btn btn-light">
+          <Icon name="calendar" size={18} />
+          Sacar mi turno
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #f2fbfa 0%, #e3f3f2 100%);
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero__inner {
+    max-width: 720px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .specs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .specs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .specs li:hover {
+    border-color: var(--brand-400);
+    color: var(--brand-700);
+  }
+
+  .specs svg {
+    color: var(--accent);
+  }
+
+  .cta {
+    position: relative;
+    overflow: hidden;
+    background: var(--brand-900);
+    padding: 72px 0;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(31, 182, 163, 0.25), transparent 45%),
+      radial-gradient(circle at 15% 85%, rgba(13, 158, 158, 0.2), transparent 40%);
+  }
+
+  .cta__inner {
+    position: relative;
+    text-align: center;
+    max-width: 620px;
+  }
+
+  .cta__title {
+    color: #fff;
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  .cta__sub {
+    color: #b8d4d3;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .cta__actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+</style>

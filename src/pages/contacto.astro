@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="Contacto — Sanatorio Vital"
+  description="Contactate con el Sanatorio Vital: sacá un turno online, escribinos por WhatsApp o visitanos. Urgencias 24 horas."
+>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <span class="eyebrow">Contacto</span>
+      <h1>Estamos para ayudarte</h1>
+      <p>
+        Sacá un turno, hacenos una consulta o escribinos por urgencias. Respondemos en el día.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contacto__grid">
+      <div class="contacto__info">
+        <div class="contacto__card">
+          <div class="contacto__icon"><Icon name="map" size={22} /></div>
+          <div>
+            <h3>Dónde estamos</h3>
+            <p>{site.address}</p>
+            <a href={site.mapsUrl} target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+
+        <div class="contacto__card">
+          <div class="contacto__icon"><Icon name="phone" size={22} /></div>
+          <div>
+            <h3>Teléfono</h3>
+            <p>
+              Turnos: <a href={site.phoneHref}>{site.phone}</a>
+            </p>
+            <p>
+              Urgencias 24 hs: <a href={site.phoneHref}>{site.phone}</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contacto__card">
+          <div class="contacto__icon"><Icon name="mail" size={22} /></div>
+          <div>
+            <h3>Email</h3>
+            <p>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contacto__card">
+          <div class="contacto__icon"><Icon name="whatsapp" size={22} /></div>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>
+              Escribinos y te respondemos en minutos.
+            </p>
+            <a href={site.whatsapp} target="_blank" rel="noopener">Abrir chat</a>
+          </div>
+        </div>
+
+        <div class="contacto__card contacto__card--dark">
+          <div class="contacto__icon"><Icon name="clock" size={22} /></div>
+          <div>
+            <h3>Horarios</h3>
+            <p>Lunes a viernes: 7:00 – 21:00 hs</p>
+            <p>Sábados: 8:00 – 14:00 hs</p>
+            <p>Guardia: 24 horas, todos los días</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacto__form-wrap">
+        <div class="contacto__form">
+          <h2>Solicitá tu turno</h2>
+          <p class="contacto__form-sub">
+            Completá el formulario y coordinamos tu consulta. Te confirmamos por WhatsApp o email.
+          </p>
+
+          <form action="/gracias" method="get" data-contact-form>
+            <div class="field">
+              <label for="nombre">Nombre y apellido</label>
+              <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Ej: María López" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@email.com" />
+            </div>
+
+            <div class="field">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="011 1234-5678" />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="especialidad">Especialidad</label>
+                <select id="especialidad" name="especialidad" required>
+                  <option value="" disabled selected>Elegí una opción</option>
+                  <option value="clinica">Clínica médica</option>
+                  <option value="cardiologia">Cardiología</option>
+                  <option value="pediatria">Pediatría</option>
+                  <option value="ginecologia">Ginecología</option>
+                  <option value="traumatologia">Traumatología</option>
+                  <option value="dermatologia">Dermatología</option>
+                  <option value="oftalmologia">Oftalmología</option>
+                  <option value="laboratorio">Laboratorio</option>
+                  <option value="imagenes">Diagnóstico por imágenes</option>
+                  <option value="otra">Otra</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="obra-social">Obra social / prepaga</label>
+                <input id="obra-social" name="obra-social" type="text" placeholder="Opcional" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente tu consulta..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary contacto__submit">
+              <Icon name="calendar" size={18} />
+              Enviar solicitud
+            </button>
+
+            <p class="contacto__hint">
+              Al enviar aceptás nuestra política de privacidad. Respondemos dentro de las 24 hs hábiles.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map">
+    <div class="map__placeholder">
+      <Icon name="map" size={40} />
+      <p>Acá va el mapa de ubicación del Sanatorio Vital</p>
+      <a href={site.mapsUrl} class="btn btn-outline" target="_blank" rel="noopener">Abrir en Google Maps</a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.querySelector('[data-contact-form]');
+
+  form?.addEventListener('submit', () => {
+    form.classList.add('is-sending');
+  });
+</script>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #f2fbfa 0%, #e3f3f2 100%);
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero__inner {
+    max-width: 720px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .contacto__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .contacto__info {
+    display: grid;
+    gap: 16px;
+  }
+
+  .contacto__card {
+    display: flex;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contacto__card--dark {
+    background: var(--brand-900);
+    border-color: var(--brand-900);
+  }
+
+  .contacto__card--dark h3 {
+    color: #fff;
+  }
+
+  .contacto__card--dark p,
+  .contacto__card--dark a {
+    color: #b8d4d3;
+  }
+
+  .contacto__card--dark .contacto__icon {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .contacto__icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--brand-50);
+    color: var(--brand-600);
+  }
+
+  .contacto__card h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .contacto__card p {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    margin-bottom: 4px;
+  }
+
+  .contacto__card a {
+    color: var(--brand-600);
+    font-weight: 600;
+    font-size: 0.93rem;
+  }
+
+  .contacto__form-wrap {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .contacto__form h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .contacto__form-sub {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--ink);
+    background: var(--surface-alt);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .field textarea {
+    resize: vertical;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--brand-500);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(13, 158, 158, 0.15);
+  }
+
+  .contacto__submit {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .contacto__hint {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .map {
+    padding: 0 0 88px;
+  }
+
+  .map__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 300px;
+    background: var(--surface-alt);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--brand-600);
+  }
+
+  .map__placeholder p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .form.is-sending {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    .contacto__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .contacto__form-wrap {
+      padding: 24px;
+    }
+
+    .field-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+</style>

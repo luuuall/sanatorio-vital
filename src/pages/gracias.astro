@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+---
+
+<Layout title="Solicitud enviada — Sanatorio Vital">
+  <section class="thanks">
+    <div class="container thanks__inner">
+      <div class="thanks__icon">
+        <Icon name="check" size={36} />
+      </div>
+      <span class="eyebrow">Solicitud enviada</span>
+      <h1>¡Gracias por escribirnos!</h1>
+      <p class="thanks__sub">
+        Recibimos tu solicitud de turno. Un integrante de nuestro equipo se va a comunicar con vos
+        dentro de las próximas 24 horas hábiles para confirmar el horario.
+      </p>
+      <p class="thanks__urg">
+        Si es una urgencia, llamanos al <a href={site.phoneHref}>{site.phone}</a>. La guardia está
+        disponible las 24 horas, todos los días.
+      </p>
+      <div class="thanks__actions">
+        <a href="/" class="btn btn-primary">Volver al inicio</a>
+        <a href="/contacto" class="btn btn-outline">Hacer otra consulta</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .thanks {
+    padding: 96px 0;
+  }
+
+  .thanks__inner {
+    max-width: 640px;
+    text-align: center;
+  }
+
+  .thanks__icon {
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--brand-50);
+    color: var(--accent);
+    margin: 0 auto 24px;
+  }
+
+  .thanks h1 {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+
+  .thanks__sub {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+
+  .thanks__urg {
+    background: var(--brand-50);
+    border: 1px solid var(--brand-100);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .thanks__urg a {
+    color: var(--brand-600);
+    font-weight: 700;
+  }
+
+  .thanks__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+</style>

@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { stats, servicios, porQueElegirnos, especialidades, testimonios, site } from '../data/site';
+
+const serviciosDestacados = servicios.slice(0, 6);
+---
+
+<Layout title="Sanatorio Vital — Atención médica integral para toda tu familia">
+  <Hero />
+
+  <section class="stats" aria-label="Sanatorio Vital en números">
+    <div class="container stats__grid">
+      {stats.map((s) => (
+        <div class="stats__item">
+          <strong>{s.value}</strong>
+          <span>{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Nuestros servicios</span>
+        <h2 class="section-title">Todo lo que tu salud necesita, en un solo lugar</h2>
+        <p class="section-sub">
+          Consultas, estudios y urgencias con más de 30 especialidades y un equipo que te acompaña
+          en cada etapa.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        {serviciosDestacados.map((s) => (
+          <ServiceCard {...s} />
+        ))}
+      </div>
+      <div class="servicios__more">
+        <a href="/servicios" class="btn btn-outline">Ver todas las especialidades</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="porque">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Por qué elegirnos</span>
+        <h2 class="section-title">Pensamos la atención pensando en vos</h2>
+        <p class="section-sub">
+          Cada detalle de nuestro sanatorio está diseñado para que tu experiencia sea simple,
+          rápida y humana.
+        </p>
+      </div>
+      <div class="grid grid-2">
+        {porQueElegirnos.map((f) => (
+          <div class="feature">
+            <div class="feature__icon">
+              <Icon name={f.icon} size={24} />
+            </div>
+            <div>
+              <h3>{f.title}</h3>
+              <p>{f.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="especialidades">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Especialidades</span>
+        <h2 class="section-title">Más de 30 especialidades médicas</h2>
+        <p class="section-sub">
+          Un equipo multidisciplinario que trabaja en red para darte un diagnóstico integral.
+        </p>
+      </div>
+      <ul class="specs">
+        {especialidades.map((e) => (
+          <li>
+            <Icon name="check" size={15} />
+            {e}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="testimonios">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Testimonios</span>
+        <h2 class="section-title">La confianza de quienes nos eligen</h2>
+      </div>
+      <div class="grid grid-3">
+        {testimonios.map((t) => (
+          <figure class="testimonial">
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">
+              {Array.from({ length: 5 }).map(() => (
+                <Icon name="star" size={16} />
+              ))}
+            </div>
+            <blockquote>“{t.texto}”</blockquote>
+            <figcaption>
+              <span class="testimonial__avatar" aria-hidden="true">
+                {t.nombre.charAt(0)}
+              </span>
+              <div>
+                <strong>{t.nombre}</strong>
+                <span>{t.detalle}</span>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title">Tu salud no puede esperar</h2>
+      <p class="cta__sub">
+        Sacá tu turno online hoy mismo o escribinos por WhatsApp y te respondemos a la brevedad.
+      </p>
+      <div class="cta__actions">
+        <a href="/contacto" class="btn btn-light">
+          <Icon name="calendar" size={18} />
+          Sacar mi turno
+        </a>
+        <a href={site.whatsapp} class="btn btn-accent" target="_blank" rel="noopener">
+          <Icon name="whatsapp" size={18} />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .stats {
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats__item {
+    text-align: center;
+    padding: 40px 16px;
+    border-left: 1px solid var(--border);
+  }
+
+  .stats__item:first-child {
+    border-left: none;
+  }
+
+  .stats__item strong {
+    display: block;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--brand-600);
+    letter-spacing: -0.02em;
+  }
+
+  .stats__item span {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .servicios__more {
+    text-align: center;
+    margin-top: 44px;
+  }
+
+  .feature {
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .feature:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature__icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--brand-600);
+    color: #fff;
+  }
+
+  .feature h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .feature p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+
+  .specs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .specs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .specs li:hover {
+    border-color: var(--brand-400);
+    color: var(--brand-700);
+  }
+
+  .specs svg {
+    color: var(--accent);
+  }
+
+  .testimonial {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .testimonial__stars {
+    display: flex;
+    gap: 3px;
+    color: #f5a623;
+    margin-bottom: 14px;
+  }
+
+  .testimonial blockquote {
+    margin: 0 0 20px;
+    font-size: 1rem;
+    color: var(--ink);
+    flex-grow: 1;
+  }
+
+  .testimonial figcaption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .testimonial__avatar {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--brand-600);
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .testimonial figcaption strong {
+    display: block;
+    font-size: 0.95rem;
+  }
+
+  .testimonial figcaption span:last-child {
+    color: var(--ink-soft);
+    font-size: 0.83rem;
+  }
+
+  .cta {
+    position: relative;
+    overflow: hidden;
+    background: var(--brand-900);
+    padding: 80px 0;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(31, 182, 163, 0.25), transparent 45%),
+      radial-gradient(circle at 15% 85%, rgba(13, 158, 158, 0.2), transparent 40%);
+  }
+
+  .cta__inner {
+    position: relative;
+    text-align: center;
+    max-width: 620px;
+  }
+
+  .cta__title {
+    color: #fff;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .cta__sub {
+    color: #b8d4d3;
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+
+  .cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  @media (max-width: 860px) {
+    .stats__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats__item {
+      border-top: 1px solid var(--border);
+    }
+
+    .stats__item:nth-child(1),
+    .stats__item:nth-child(2) {
+      border-top: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .stats__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stats__item {
+      padding: 28px 12px;
+    }
+  }
+</style>

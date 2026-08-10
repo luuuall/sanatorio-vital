@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { especialistas, site } from '../data/site';
+
+function iniciales(nombre: string) {
+  return nombre
+    .replace(/^(Dr\.|Dra\.)\s+/, '')
+    .split(' ')
+    .slice(0, 2)
+    .map((p) => p.charAt(0))
+    .join('');
+}
+---
+
+<Layout
+  title="Equipo médico — Sanatorio Vital"
+  description="Conocé a los profesionales de la salud del Sanatorio Vital: especialistas acreditados con experiencia y vocación."
+>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <span class="eyebrow">Equipo médico</span>
+      <h1>Profesionales que te cuidan</h1>
+      <p>
+        Más de 120 médicos y profesionales de la salud con matrícula habilitante, formación continua
+        y un compromiso real con cada paciente.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        {especialistas.map((e) => (
+          <article class="doctor">
+            <div class="doctor__avatar" aria-hidden="true">
+              {iniciales(e.nombre)}
+            </div>
+            <span class="doctor__spec">{e.especialidad}</span>
+            <h3>{e.nombre}</h3>
+            <p>{e.texto}</p>
+            <div class="doctor__foot">
+              <span class="doctor__mat">{e.matricula}</span>
+              <a href="/contacto">Pedir turno</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title">¿Buscás un especialista en particular?</h2>
+      <p class="cta__sub">
+        Escribinos y te contamos con qué profesionales y en qué horarios podés atenderte.
+      </p>
+      <div class="cta__actions">
+        <a href="/contacto" class="btn btn-light">
+          <Icon name="calendar" size={18} />
+          Consultar disponibilidad
+        </a>
+        <a href={site.whatsapp} class="btn btn-accent" target="_blank" rel="noopener">
+          <Icon name="whatsapp" size={18} />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #f2fbfa 0%, #e3f3f2 100%);
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero__inner {
+    max-width: 720px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .doctor {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .doctor:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .doctor__avatar {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-500), var(--brand-700));
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .doctor__spec {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-700);
+    background: var(--brand-50);
+    border-radius: 999px;
+    padding: 5px 12px;
+    margin-bottom: 12px;
+  }
+
+  .doctor h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .doctor p {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    flex-grow: 1;
+    margin-bottom: 18px;
+  }
+
+  .doctor__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .doctor__mat {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .doctor__foot a {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--brand-600);
+  }
+
+  .cta {
+    position: relative;
+    overflow: hidden;
+    background: var(--brand-900);
+    padding: 72px 0;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(31, 182, 163, 0.25), transparent 45%),
+      radial-gradient(circle at 15% 85%, rgba(13, 158, 158, 0.2), transparent 40%);
+  }
+
+  .cta__inner {
+    position: relative;
+    text-align: center;
+    max-width: 620px;
+  }
+
+  .cta__title {
+    color: #fff;
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  .cta__sub {
+    color: #b8d4d3;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+</style>
