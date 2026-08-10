@@ -55,13 +55,6 @@ export const servicios = [
     features: ['ECG', 'Ergometría', 'Ecocardiograma'],
   },
   {
-    icon: 'baby',
-    title: 'Pediatría',
-    description:
-      'Atención integral para niños y adolescentes, control del crecimiento, vacunación y seguimiento.',
-    features: ['Controles', 'Vacunación', 'Crecimiento'],
-  },
-  {
     icon: 'eye',
     title: 'Oftalmología',
     description:
@@ -114,7 +107,6 @@ export const porQueElegirnos = [
 export const especialidades = [
   'Clínica médica',
   'Cardiología',
-  'Pediatría',
   'Ginecología y obstetricia',
   'Traumatología',
   'Dermatología',
@@ -144,13 +136,6 @@ export const especialistas = [
     matricula: 'MN 98.712',
     texto:
       'Médico clínico dedicado al diagnóstico integral y al seguimiento de pacientes crónicos.',
-  },
-  {
-    nombre: 'Dra. Cecilia Ruiz',
-    especialidad: 'Pediatría',
-    matricula: 'MN 110.298',
-    texto:
-      'Pediatra apasionada por la salud infantil, el control del crecimiento y la vacunación.',
   },
   {
     nombre: 'Dr. Diego Salas',
@@ -201,11 +186,5 @@ export const testimonios = [
     detalle: 'Paciente de cardiología',
     texto:
       'Pude sacar mi turno por la web en dos minutos y los estudios fueron mucho más rápidos de lo que esperaba. Muy recomendables.',
-  },
-  {
-    nombre: 'Carla T.',
-    detalle: 'Mamá de paciente de pediatría',
-    texto:
-      'Mi hija siempre fue atendida con muchísima calidez. Los médicos se toman el tiempo de explicarte todo con paciencia.',
   },
 ];
