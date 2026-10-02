@@ -15,18 +15,17 @@ Landing page del Sanatorio Papa Francisco, un sanatorio médico. Construida con 
 
 ```
 src/
-├── data/site.ts          # Contenido central (servicios, equipo, testimonios, etc.)
+├── data/site.ts          # Contenido central (servicios, especialidades, testimonios, etc.)
 ├── layouts/Layout.astro  # Layout base con estilos globales y tema
 ├── components/           # Header, Footer, Hero, ServiceCard, Icon
 └── pages/
     ├── index.astro       # Home: hero, stats, servicios, por qué elegirnos, especialidades, testimonios, CTA
     ├── servicios.astro   # Servicios y especialidades
-    ├── equipo.astro      # Equipo médico
     ├── contacto.astro    # Contacto y formulario de turnos
     └── gracias.astro     # Confirmación de formulario
 ```
 
 ## Contenido
 
-Todo el contenido editable (servicios, especialistas, testimonios, datos de contacto, horarios)
+Todo el contenido editable (servicios, especialidades, testimonios, datos de contacto)
 está centralizado en `src/data/site.ts`.

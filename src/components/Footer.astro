@@ -1,5 +1,5 @@
 ---
-import { site, servicios as serviciosData, horarios } from '../data/site';
+import { site, servicios as serviciosData } from '../data/site';
 
 const servicios = serviciosData.slice(0, 4).map((s) => s.title);
 const year = new Date().getFullYear();
@@ -47,18 +47,6 @@ const year = new Date().getFullYear();
         <ul>
           {servicios.map((s) => (
             <li><a href="/servicios">{s}</a></li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <h4>Horarios de atención</h4>
-        <ul>
-          {horarios.map((h) => (
-            <li>
-              <span class="footer__days">{h.dias}</span>
-              <span class="footer__hours">{h.hora}</span>
-            </li>
           ))}
         </ul>
       </div>
@@ -184,16 +172,6 @@ const year = new Date().getFullYear();
 
   .footer__col a:hover {
     color: #fff;
-  }
-
-  .footer__days,
-  .footer__hours {
-    display: block;
-  }
-
-  .footer__hours {
-    color: var(--accent);
-    font-weight: 600;
   }
 
   .footer__bottom {

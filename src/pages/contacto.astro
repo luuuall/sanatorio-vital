@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import { site, especialidades, horarios } from '../data/site';
+import { site, especialidades } from '../data/site';
 ---
 
 <Layout
@@ -64,14 +64,7 @@ import { site, especialidades, horarios } from '../data/site';
           </div>
         </div>
 
-        <div class="contacto__card contacto__card--dark">
-          <div class="contacto__icon"><Icon name="clock" size={22} /></div>
-          <div>
-            <h3>Horarios</h3>
-            {horarios.map((h) => <p>{h.dias}: {h.hora}</p>)}
-          </div>
         </div>
-      </div>
 
       <div class="contacto__form-wrap">
         <div class="contacto__form">
@@ -194,25 +187,6 @@ import { site, especialidades, horarios } from '../data/site';
     border-radius: var(--radius);
     padding: 22px;
     box-shadow: var(--shadow-sm);
-  }
-
-  .contacto__card--dark {
-    background: var(--brand-900);
-    border-color: var(--brand-900);
-  }
-
-  .contacto__card--dark h3 {
-    color: #fff;
-  }
-
-  .contacto__card--dark p,
-  .contacto__card--dark a {
-    color: #b8d4d3;
-  }
-
-  .contacto__card--dark .contacto__icon {
-    background: var(--accent);
-    color: #fff;
   }
 
   .contacto__icon {

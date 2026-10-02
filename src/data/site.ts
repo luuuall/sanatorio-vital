@@ -11,12 +11,6 @@ export const site = {
   x: 'https://x.com',
 };
 
-export const horarios = [
-  { dias: 'Lunes a viernes', hora: '7:00 – 21:00 hs' },
-  { dias: 'Sábados', hora: '8:00 – 14:00 hs' },
-  { dias: 'Urgencias', hora: '24 horas, todos los días' },
-];
-
 export const stats = [
   { value: '25+', label: 'Años de experiencia' },
   { value: '320k+', label: 'Pacientes atendidos' },
@@ -167,58 +161,6 @@ export const especialidades = [
   'Psicología',
   'Cirugía estética',
   'Hemodinamia',
-];
-
-export const especialistas = [
-  {
-    nombre: 'Dra. Laura Fernández',
-    especialidad: 'Cardiología',
-    matricula: 'MN 102.345',
-    texto:
-      'Especialista en cardiología clínica y prevención cardiovascular, con más de 15 años de experiencia.',
-  },
-  {
-    nombre: 'Dr. Martín Gómez',
-    especialidad: 'Clínica médica',
-    matricula: 'MN 98.712',
-    texto:
-      'Médico clínico dedicado al diagnóstico integral y al seguimiento de pacientes crónicos.',
-  },
-  {
-    nombre: 'Dr. Diego Salas',
-    especialidad: 'Traumatología',
-    matricula: 'MN 87.401',
-    texto:
-      'Traumatólogo y ortopedista con experiencia en medicina deportiva y cirugía de rodilla.',
-  },
-  {
-    nombre: 'Dra. Valeria Ortiz',
-    especialidad: 'Dermatología',
-    matricula: 'MN 115.633',
-    texto:
-      'Dermatóloga enfocada en detección temprana de cáncer de piel y dermatología estética.',
-  },
-  {
-    nombre: 'Dr. Pablo Herrera',
-    especialidad: 'Neurología',
-    matricula: 'MN 92.567',
-    texto:
-      'Neurólogo especializado en cefaleas, epilepsia y enfermedades neurodegenerativas.',
-  },
-  {
-    nombre: 'Dra. Natalia Vega',
-    especialidad: 'Ginecología',
-    matricula: 'MN 108.220',
-    texto:
-      'Ginecóloga con foco en salud de la mujer, control prenatal y menopausia.',
-  },
-  {
-    nombre: 'Dr. Federico Molina',
-    especialidad: 'Oftalmología',
-    matricula: 'MN 95.318',
-    texto:
-      'Oftalmólogo especializado en cirugía de catarata y tratamiento del glaucoma.',
-  },
 ];
 
 export const testimonios = [
