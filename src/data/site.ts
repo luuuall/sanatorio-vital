@@ -26,46 +26,60 @@ export const stats = [
 
 export const servicios = [
   {
-    icon: 'stethoscope',
-    title: 'Clínica médica',
+    icon: 'bandage',
+    title: 'Traumatología',
     description:
-      'Consultas de medicina general con diagnóstico integral, seguimiento de enfermedades crónicas y medicina preventiva.',
-    features: ['Control anual', 'Seguimiento crónico', 'Interconsulta'],
+      'Atención de fracturas, esguinces y lesiones osteomusculares, con diagnóstico por imágenes y recuperación guiada.',
+    features: ['Fracturas y esguinces', 'Cirugía traumatológica', 'Recuperación funcional'],
   },
   {
-    icon: 'xray',
-    title: 'Diagnóstico por imágenes',
-    description:
-      'Resonancia magnética, tomografía, radiología digital y ecografías de alta resolución con informes en 24 hs.',
-    features: ['RMN y TAC', 'Radiología digital', 'Ecografías'],
-  },
-  {
-    icon: 'flask',
-    title: 'Laboratorio',
-    description:
-      'Análisis clínicos completos con equipos automatizados y resultados online seguros desde tu dispositivo.',
-    features: ['Análisis de sangre', 'Resultados online', 'Toma a domicilio'],
-  },
-  {
-    icon: 'ambulance',
-    title: 'Urgencias 24h',
-    description:
-      'Guardia médica permanente con atención inmediata, sala de observación y derivación coordinada.',
-    features: ['Atención inmediata', 'Observación', 'Derivaciones'],
-  },
-  {
-    icon: 'heart',
+    icon: 'heartPulse',
     title: 'Cardiología',
     description:
-      'Estudios cardiovasculares completos: electrocardiograma, ergometría, ecocardiograma y holter.',
-    features: ['ECG', 'Ergometría', 'Ecocardiograma'],
+      'Consultas y estudios cardiovasculares completos para prevenir, diagnosticar y tratar enfermedades del corazón.',
+    features: ['ECG y holter', 'Ecocardiograma', 'Prevención cardiovascular'],
+  },
+  {
+    icon: 'baby',
+    title: 'Pediatría',
+    description:
+      'Acompañamos la salud de los más chicos en cada etapa: controles, vacunación y seguimiento del crecimiento.',
+    features: ['Control del crecimiento', 'Vacunación', 'Pediatría general'],
+  },
+  {
+    icon: 'female',
+    title: 'Ginecología y obstetricia',
+    description:
+      'Salud de la mujer en todas las etapas: consultas ginecológicas, control prenatal y atención del embarazo.',
+    features: ['Control prenatal', 'Ginecología', 'Salud materna'],
+  },
+  {
+    icon: 'droplet',
+    title: 'Urología',
+    description:
+      'Diagnóstico y tratamiento de la salud urinaria, con estudios, cálculo renales e infecciones urinarias.',
+    features: ['Cálculos renales', 'Estudios urológicos', 'Infecciones urinarias'],
+  },
+  {
+    icon: 'gut',
+    title: 'Gastroenterología',
+    description:
+      'Consultas y estudios del esophagus, estómago, intestino e hígado, con endoscopías y tratamientos actualizados.',
+    features: ['Endoscopías', 'Hígado y vías biliares', 'Enfermedad intestinal'],
   },
   {
     icon: 'eye',
     title: 'Oftalmología',
     description:
       'Consultas oftalmológicas, medición de graduación, fondo de ojo y detección temprana de patologías.',
-    features: ['Graduación', 'Fondo de ojo', 'Patologías'],
+    features: ['Graduación', 'Fondo de ojo', 'Cirugía de catarata'],
+  },
+  {
+    icon: 'ear',
+    title: 'Otorrinolaringología',
+    description:
+      'Atención de oído, nariz y garganta: audiometría, estudios de la audición y cirugías de vías respiratorias superiores.',
+    features: ['Audiometría', 'Rinosinusitis', 'Cirugía ORL'],
   },
   {
     icon: 'tooth',
@@ -75,11 +89,39 @@ export const servicios = [
     features: ['Implantes', 'Ortodoncia', 'Estética dental'],
   },
   {
-    icon: 'pulse',
-    title: 'Nutrición',
+    icon: 'sparkles',
+    title: 'Dermatología',
     description:
-      'Planes de alimentación personalizados para bajar de peso, deporte, embarazo o patologías metabólicas.',
-    features: ['Planes a medida', 'Diabetes', 'Nutrición deportiva'],
+      'Diagnóstico y tratamiento de enfermedades de la piel, control de lunares y procedimientos estéticos.',
+    features: ['Control de lunares', 'Tratamientos', 'Estética'],
+  },
+  {
+    icon: 'puzzle',
+    title: 'Psiquiatría',
+    description:
+      'Salud mental con consultas, seguimiento y tratamientos para depresión, ansiedad y adicciones.',
+    features: ['Depresión y ansiedad', 'Tratamiento farmacológico', 'Seguimiento'],
+  },
+  {
+    icon: 'smile',
+    title: 'Psicología',
+    description:
+      'Atención psicológica individual y familiar para trabajar el bienestar emocional y los vínculos.',
+    features: ['Terapia individual', 'Terapia familiar', 'Bienestar emocional'],
+  },
+  {
+    icon: 'scissors',
+    title: 'Cirugía estética',
+    description:
+      'Procedimientos quirúrgicos estéticos con evaluación médica personalizada y seguimiento postoperatorio.',
+    features: ['Evaluación personalizada', 'Cirugías estéticas', 'Seguimiento'],
+  },
+  {
+    icon: 'pulse',
+    title: 'Hemodinamia',
+    description:
+      'Estudio de la circulación sanguínea y control de la presión arterial para cuidar tu riesgo cardiovascular.',
+    features: ['Presión arterial', 'Ecografía Doppler', 'Riesgo cardiovascular'],
   },
 ];
 
