@@ -27,7 +27,7 @@ const path = Astro.url.pathname;
       ))}
     </nav>
 
-    <a href="/contacto" class="btn btn-primary header__cta">Solicitar turno</a>
+    <a href="/contacto" class="btn btn-primary header__turno header__cta">Solicitar turno</a>
 
     <button
       class="header__burger"
@@ -52,7 +52,7 @@ const path = Astro.url.pathname;
         {link.label}
       </a>
     ))}
-    <a href="/contacto" class="btn btn-primary">Solicitar turno</a>
+        <a href="/contacto" class="btn btn-primary header__turno">Solicitar turno</a>
   </nav>
 </header>
 
@@ -96,6 +96,15 @@ const path = Astro.url.pathname;
   .header__brand {
     display: inline-flex;
     align-items: center;
+  }
+
+  .header__turno {
+    background: var(--gray-600);
+    box-shadow: none;
+  }
+
+  .header__turno:hover {
+    background: var(--gray-500);
   }
 
   .header__nav {
