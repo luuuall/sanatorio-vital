@@ -9,6 +9,17 @@ const serviciosDestacados = servicios.slice(0, 6);
 ---
 
 <Layout title="Sanatorio Papa Francisco — Atención médica integral para toda tu familia">
+  <section class="banner">
+    <img
+      src="/banner.jpg"
+      alt="Sanatorio Papa Francisco"
+      width="1600"
+      height="1200"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </section>
+
   <Hero />
 
   <section class="stats" aria-label="Sanatorio Papa Francisco en números">
@@ -140,6 +151,14 @@ const serviciosDestacados = servicios.slice(0, 6);
 </Layout>
 
 <style>
+  .banner img {
+    display: block;
+    width: 100%;
+    height: clamp(240px, 42vh, 440px);
+    object-fit: cover;
+    object-position: center;
+  }
+
   .stats {
     border-bottom: 1px solid var(--border);
     background: #fff;
