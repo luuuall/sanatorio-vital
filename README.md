@@ -1,6 +1,6 @@
-# Sanatorio Papa Francisco
+# Sanatorio Vital
 
-Landing page del Sanatorio Papa Francisco, un sanatorio médico. Construida con **Astro**.
+Landing page del Sanatorio Vital, un sanatorio médico. Construida con **Astro**.
 
 ## Comandos
 

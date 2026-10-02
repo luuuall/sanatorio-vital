@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Sanatorio Papa Francisco',
+  name: 'Sanatorio Vital',
   phone: '(011) 6227-2452',
   phoneHref: 'tel:+541162272452',
   whatsapp: 'https://wa.me/5491148881234',
