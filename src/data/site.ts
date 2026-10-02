@@ -3,7 +3,7 @@ export const site = {
   phone: '(011) 4888-1234',
   phoneHref: 'tel:+541148881234',
   whatsapp: 'https://wa.me/5491148881234',
-  email: 'contacto@sanatoriovital.com.ar',
+  email: 'info@sanatoriovital.com',
   address: 'Av Pte Perón 3619, San Martín',
   mapsUrl: 'https://maps.google.com/?q=Av.+Pte.+Peron+3619+San+Martin+Buenos+Aires',
   instagram: 'https://instagram.com',
