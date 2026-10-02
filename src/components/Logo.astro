@@ -2,7 +2,7 @@
 ---
 
 <span class="logo">
-  <img class="logo__mark" src="/mark.png" alt="" width="177" height="177" />
+  <span class="logo__mark" aria-hidden="true"></span>
   <span class="logo__wordmark">
     <span>Sanatorio</span>
     <span>Vital</span>
@@ -22,6 +22,9 @@
     width: 46px;
     height: 46px;
     flex-shrink: 0;
+    background-color: var(--cross);
+    -webkit-mask: url('/mark.png') no-repeat center / contain;
+    mask: url('/mark.png') no-repeat center / contain;
   }
 
   .logo__wordmark {
