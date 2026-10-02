@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import { porQueElegirnos, testimonios, site } from '../data/site';
+import { porQueElegirnos, site } from '../data/site';
 ---
 
 <Layout title="Sanatorio Vital — Atención médica integral para toda tu familia">
@@ -40,36 +40,6 @@ import { porQueElegirnos, testimonios, site } from '../data/site';
               <p>{f.description}</p>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="testimonios">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Testimonios</span>
-        <h2 class="section-title">La confianza de quienes nos eligen</h2>
-      </div>
-      <div class="grid grid-2">
-        {testimonios.map((t) => (
-          <figure class="testimonial">
-            <div class="testimonial__stars" aria-label="5 de 5 estrellas">
-              {Array.from({ length: 5 }).map(() => (
-                <Icon name="star" size={16} />
-              ))}
-            </div>
-            <blockquote>“{t.texto}”</blockquote>
-            <figcaption>
-              <span class="testimonial__avatar" aria-hidden="true">
-                {t.nombre.charAt(0)}
-              </span>
-              <div>
-                <strong>{t.nombre}</strong>
-                <span>{t.detalle}</span>
-              </div>
-            </figcaption>
-          </figure>
         ))}
       </div>
     </div>
@@ -164,61 +134,6 @@ import { porQueElegirnos, testimonios, site } from '../data/site';
   .feature p {
     color: var(--ink-soft);
     font-size: 0.94rem;
-  }
-
-  .testimonial {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .testimonial__stars {
-    display: flex;
-    gap: 3px;
-    color: #f5a623;
-    margin-bottom: 14px;
-  }
-
-  .testimonial blockquote {
-    margin: 0 0 20px;
-    font-size: 1rem;
-    color: var(--ink);
-    flex-grow: 1;
-  }
-
-  .testimonial figcaption {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-  }
-
-  .testimonial__avatar {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--brand-600);
-    color: #fff;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .testimonial figcaption strong {
-    display: block;
-    font-size: 0.95rem;
-  }
-
-  .testimonial figcaption span:last-child {
-    color: var(--ink-soft);
-    font-size: 0.83rem;
   }
 
   .cta {

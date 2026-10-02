@@ -155,18 +155,3 @@ export const especialidades = [
   'Cirugía estética',
   'Hemodinamia',
 ];
-
-export const testimonios = [
-  {
-    nombre: 'Silvia R.',
-    detalle: 'Paciente de clínica médica',
-    texto:
-      'Me atendieron de inmediato en urgencias a las 3 de la mañana. El trato del equipo fue excelente y el seguimiento posterior, impecable.',
-  },
-  {
-    nombre: 'Jorge M.',
-    detalle: 'Paciente de cardiología',
-    texto:
-      'Pude sacar mi turno por la web en dos minutos y los estudios fueron mucho más rápidos de lo que esperaba. Muy recomendables.',
-  },
-];
