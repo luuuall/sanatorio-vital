@@ -13,8 +13,8 @@ const serviciosDestacados = servicios.slice(0, 6);
     <img
       src="/banner.jpg"
       alt="Sanatorio Vital"
-      width="1448"
-      height="1086"
+      width="1573"
+      height="1291"
       decoding="async"
       fetchpriority="high"
     />
@@ -151,12 +151,19 @@ const serviciosDestacados = servicios.slice(0, 6);
 </Layout>
 
 <style>
+  .banner {
+    background: var(--surface-alt);
+    padding: clamp(16px, 3vw, 40px) 0;
+  }
+
   .banner img {
     display: block;
     width: 100%;
-    height: clamp(240px, 42vh, 440px);
-    object-fit: cover;
-    object-position: center;
+    max-width: 980px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
   }
 
   .stats {
