@@ -151,10 +151,25 @@ const serviciosDestacados = servicios.slice(0, 6);
 </Layout>
 
 <style>
+  .banner {
+    position: relative;
+    overflow: hidden;
+    background: var(--brand-900);
+  }
+
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: -48px;
+    background: url('/banner.jpg') center / cover no-repeat;
+    filter: blur(28px);
+  }
+
   .banner img {
+    position: relative;
     display: block;
     width: 100%;
-    max-width: var(--container);
+    max-width: 1500px;
     height: auto;
     margin-inline: auto;
   }
