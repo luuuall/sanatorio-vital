@@ -151,19 +151,12 @@ const serviciosDestacados = servicios.slice(0, 6);
 </Layout>
 
 <style>
-  .banner {
-    background: var(--surface-alt);
-    padding: clamp(16px, 3vw, 40px) 0;
-  }
-
   .banner img {
     display: block;
     width: 100%;
-    max-width: 980px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    height: clamp(230px, 38vh, 400px);
+    object-fit: cover;
+    object-position: center;
   }
 
   .stats {
