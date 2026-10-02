@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import { stats, servicios, porQueElegirnos, especialidades, testimonios, site } from '../data/site';
+import { servicios, porQueElegirnos, especialidades, testimonios, site } from '../data/site';
 
 const serviciosDestacados = servicios.slice(0, 6);
 ---
@@ -21,17 +21,6 @@ const serviciosDestacados = servicios.slice(0, 6);
   </section>
 
   <Hero />
-
-  <section class="stats" aria-label="Sanatorio Vital en números">
-    <div class="container stats__grid">
-      {stats.map((s) => (
-        <div class="stats__item">
-          <strong>{s.value}</strong>
-          <span>{s.label}</span>
-        </div>
-      ))}
-    </div>
-  </section>
 
   <section class="section" id="servicios">
     <div class="container">
@@ -181,39 +170,6 @@ const serviciosDestacados = servicios.slice(0, 6);
     max-width: 1200px;
     height: auto;
     margin-inline: auto;
-  }
-
-  .stats {
-    border-bottom: 1px solid var(--border);
-    background: #fff;
-  }
-
-  .stats__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .stats__item {
-    text-align: center;
-    padding: 40px 16px;
-    border-left: 1px solid var(--border);
-  }
-
-  .stats__item:first-child {
-    border-left: none;
-  }
-
-  .stats__item strong {
-    display: block;
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
-    font-weight: 800;
-    color: var(--brand-600);
-    letter-spacing: -0.02em;
-  }
-
-  .stats__item span {
-    color: var(--ink-soft);
-    font-size: 0.9rem;
   }
 
   .servicios__more {
@@ -387,30 +343,5 @@ const serviciosDestacados = servicios.slice(0, 6);
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
-  }
-
-  @media (max-width: 860px) {
-    .stats__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stats__item {
-      border-top: 1px solid var(--border);
-    }
-
-    .stats__item:nth-child(1),
-    .stats__item:nth-child(2) {
-      border-top: none;
-    }
-  }
-
-  @media (max-width: 560px) {
-    .stats__grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .stats__item {
-      padding: 28px 12px;
-    }
   }
 </style>
