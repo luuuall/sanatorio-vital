@@ -1,7 +1,7 @@
 export const site = {
   name: 'Sanatorio Papa Francisco',
-  phone: '(011) 4888-1234',
-  phoneHref: 'tel:+541148881234',
+  phone: '(011) 6227-2452',
+  phoneHref: 'tel:+541162272452',
   whatsapp: 'https://wa.me/5491148881234',
   email: 'info@sanatoriovital.com',
   address: 'Av Pte Perón 3619, San Martín',
