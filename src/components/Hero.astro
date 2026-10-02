@@ -16,15 +16,6 @@ const highlight = [
   <div class="hero__bg" aria-hidden="true"></div>
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="eyebrow">Tu salud es nuestra prioridad</span>
-      <h1 class="hero__title">
-        Atención médica integral para toda <span class="hero__accent">tu familia</span>
-      </h1>
-      <p class="hero__sub">
-        Más de 25 años cuidando la salud de nuestra comunidad con especialistas de primer nivel,
-        tecnología de vanguardia y un trato humano que nos hace distintos.
-      </p>
-
       <div class="hero__actions">
         <a href="/contacto" class="btn btn-primary">
           <Icon name="calendar" size={18} />
@@ -116,37 +107,6 @@ const highlight = [
     grid-template-columns: 1.05fr 0.95fr;
     gap: 64px;
     align-items: center;
-  }
-
-  .hero__title {
-    font-size: clamp(2.25rem, 5.2vw, 3.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 22px;
-  }
-
-  .hero__accent {
-    color: var(--brand-600);
-    position: relative;
-  }
-
-  .hero__accent::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 4px;
-    height: 10px;
-    background: rgba(31, 182, 163, 0.25);
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  .hero__sub {
-    font-size: 1.125rem;
-    color: var(--ink-soft);
-    max-width: 480px;
-    margin-bottom: 32px;
   }
 
   .hero__actions {
