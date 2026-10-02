@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Sanatorio Vital',
+  name: 'Sanatorio Papa Francisco',
   phone: '(011) 4888-1234',
   phoneHref: 'tel:+541148881234',
   whatsapp: 'https://wa.me/5491148881234',
@@ -111,21 +111,20 @@ export const porQueElegirnos = [
 ];
 
 export const especialidades = [
-  'Clínica médica',
-  'Cardiología',
-  'Ginecología y obstetricia',
   'Traumatología',
-  'Dermatología',
-  'Neurología',
-  'Oftalmología',
-  'Odontología',
-  'Nutrición',
-  'Psicología',
-  'Endocrinología',
+  'Cardiología',
+  'Pediatría',
+  'Ginecología y obstetricia',
   'Urología',
+  'Gastroenterología',
+  'Oftalmología',
   'Otorrinolaringología',
-  'Fonoaudiología',
-  'Kinesiología',
+  'Odontología',
+  'Dermatología',
+  'Psiquiatría',
+  'Psicología',
+  'Cirugía estética',
+  'Hemodinamia',
 ];
 
 export const especialistas = [

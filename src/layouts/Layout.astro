@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const pageTitle = title;
-const pageDescription = description ?? 'Sanatorio Vital — Tu salud es nuestra prioridad. Atención médica integral, especialidades, diagnóstico por imágenes y urgencias.';
+const pageDescription = description ?? 'Sanatorio Papa Francisco — Tu salud es nuestra prioridad. Atención médica integral, especialidades, diagnóstico por imágenes y urgencias.';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -24,7 +24,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#0d6e6e" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Sanatorio Vital" />
+    <meta property="og:site_name" content="Sanatorio Papa Francisco" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />

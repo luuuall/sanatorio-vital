@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static landing page for Sanatorio Vital, a medical clinic, built with Astro 5. No JS framework, no integrations, no backend, no tests or linter. All site copy is in Argentine Spanish (voseo); keep that tone when writing or editing content.
+Static landing page for Sanatorio Papa Francisco, a medical clinic, built with Astro 5. No JS framework, no integrations, no backend, no tests or linter. All site copy is in Argentine Spanish (voseo); keep that tone when writing or editing content.
 
 ## Commands
 
