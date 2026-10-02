@@ -12,11 +12,8 @@ const path = Astro.url.pathname;
   <div class="container header__inner">
     <a href="/" class="header__brand" aria-label="Sanatorio Vital — Inicio">
       <span class="header__logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" />
-        </svg>
+        <img src="/logo.png" alt="" width="489" height="142" />
       </span>
-      <span class="header__name">Sanatorio <strong>Vital</strong></span>
     </a>
 
     <nav class="header__nav" aria-label="Navegación principal">
@@ -99,28 +96,13 @@ const path = Astro.url.pathname;
   .header__brand {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.15rem;
-    color: var(--ink);
   }
 
-  .header__brand strong {
-    color: var(--brand-600);
-  }
-
-  .header__logo {
-    display: grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: var(--brand-600);
-    color: #fff;
-  }
-
-  .header__logo svg {
-    width: 20px;
-    height: 20px;
+  .header__logo img {
+    display: block;
+    height: 42px;
+    width: auto;
+    flex-shrink: 0;
   }
 
   .header__nav {
