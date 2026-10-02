@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const links = [
   { href: '/', label: 'Inicio' },
   { href: '/servicios', label: 'Servicios' },
@@ -11,9 +13,7 @@ const path = Astro.url.pathname;
 <header class="header">
   <div class="container header__inner">
     <a href="/" class="header__brand" aria-label="Sanatorio Vital — Inicio">
-      <span class="header__logo" aria-hidden="true">
-        <img src="/logo.png" alt="" width="489" height="142" />
-      </span>
+      <Logo />
     </a>
 
     <nav class="header__nav" aria-label="Navegación principal">
@@ -96,13 +96,6 @@ const path = Astro.url.pathname;
   .header__brand {
     display: inline-flex;
     align-items: center;
-  }
-
-  .header__logo img {
-    display: block;
-    height: 42px;
-    width: auto;
-    flex-shrink: 0;
   }
 
   .header__nav {
