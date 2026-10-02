@@ -3,6 +3,7 @@
 
 <span class="logo">
   <span class="logo__mark" aria-hidden="true"></span>
+  <span class="logo__divider" aria-hidden="true"></span>
   <span class="logo__wordmark">
     <span>Sanatorio</span>
     <span>Vital</span>
@@ -11,6 +12,7 @@
 
 <style>
   .logo {
+    --logo-size: 46px;
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -19,12 +21,21 @@
 
   .logo__mark {
     display: block;
-    width: 46px;
-    height: 46px;
+    width: var(--logo-size);
+    height: var(--logo-size);
     flex-shrink: 0;
     background-color: var(--cross);
     -webkit-mask: url('/mark.png') no-repeat center / contain;
     mask: url('/mark.png') no-repeat center / contain;
+  }
+
+  .logo__divider {
+    display: block;
+    width: 2px;
+    height: var(--logo-size);
+    flex-shrink: 0;
+    border-radius: 1px;
+    background-color: var(--cross);
   }
 
   .logo__wordmark {
