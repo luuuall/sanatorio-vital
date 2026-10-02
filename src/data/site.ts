@@ -11,13 +11,6 @@ export const site = {
   x: 'https://x.com',
 };
 
-export const stats = [
-  { value: '25+', label: 'Años de experiencia' },
-  { value: '320k+', label: 'Pacientes atendidos' },
-  { value: '120+', label: 'Profesionales de la salud' },
-  { value: '24/7', label: 'Urgencias todo el año' },
-];
-
 export const servicios = [
   {
     icon: 'bandage',

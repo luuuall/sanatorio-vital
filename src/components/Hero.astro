@@ -1,8 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { site, stats } from '../data/site';
-
-const [, pacientes, profesionales] = stats;
+import { site } from '../data/site';
 
 const highlight = [
   'Turnos online 24/7',
@@ -42,17 +40,6 @@ const highlight = [
             <strong>Guardia 24 horas</strong>
             <small>Atención inmediata todo el año</small>
           </div>
-        </div>
-      </div>
-
-      <div class="hero__card-grid">
-        <div class="hero__stat">
-          <strong>{pacientes.value}</strong>
-          <span>pacientes atendidos</span>
-        </div>
-        <div class="hero__stat">
-          <strong>{profesionales.value}</strong>
-          <span>profesionales</span>
         </div>
       </div>
 
@@ -188,32 +175,6 @@ const highlight = [
   .hero__urg small {
     color: var(--ink-soft);
     font-size: 0.85rem;
-  }
-
-  .hero__card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-
-  .hero__stat {
-    background: var(--surface-alt);
-    border-radius: var(--radius);
-    padding: 16px;
-    text-align: center;
-  }
-
-  .hero__stat strong {
-    display: block;
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: var(--brand-600);
-  }
-
-  .hero__stat span {
-    font-size: 0.82rem;
-    color: var(--ink-soft);
   }
 
   .hero__quick {
