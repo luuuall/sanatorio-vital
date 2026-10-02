@@ -9,8 +9,13 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="/" class="footer__logo" aria-label="Sanatorio Vital — Inicio">
-          <img src="/logo-light.png" alt="" width="489" height="142" />
+        <a href="/" class="footer__logo">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" />
+            </svg>
+          </span>
+          Sanatorio <strong>Vital</strong>
         </a>
         <div class="footer__socials">
           <a href={site.instagram} target="_blank" rel="noopener" aria-label="Instagram">
@@ -85,14 +90,29 @@ const year = new Date().getFullYear();
   .footer__logo {
     display: inline-flex;
     align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: #fff;
     margin-bottom: 18px;
   }
 
-  .footer__logo img {
-    display: block;
+  .footer__logo strong {
+    color: var(--accent);
+  }
+
+  .footer__logo span {
+    display: grid;
+    place-items: center;
+    width: 40px;
     height: 40px;
-    width: auto;
-    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--accent);
+    color: var(--brand-900);
+  }
+
+  .footer__logo svg {
+    width: 22px;
+    height: 22px;
   }
 
   .footer__socials {
