@@ -2,10 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import { servicios, porQueElegirnos, especialidades, testimonios, site } from '../data/site';
-
-const serviciosDestacados = servicios.slice(0, 6);
+import { porQueElegirnos, testimonios, site } from '../data/site';
 ---
 
 <Layout title="Sanatorio Vital — Atención médica integral para toda tu familia">
@@ -21,27 +18,6 @@ const serviciosDestacados = servicios.slice(0, 6);
   </section>
 
   <Hero />
-
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Nuestros servicios</span>
-        <h2 class="section-title">Todo lo que tu salud necesita, en un solo lugar</h2>
-        <p class="section-sub">
-          Consultas, estudios y urgencias con {especialidades.length} especialidades y un equipo
-          que te acompaña en cada etapa.
-        </p>
-      </div>
-      <div class="grid grid-3">
-        {serviciosDestacados.map((s) => (
-          <ServiceCard {...s} />
-        ))}
-      </div>
-      <div class="servicios__more">
-        <a href="/servicios" class="btn btn-outline">Ver todas las especialidades</a>
-      </div>
-    </div>
-  </section>
 
   <section class="section section-alt" id="porque">
     <div class="container">
@@ -69,27 +45,7 @@ const serviciosDestacados = servicios.slice(0, 6);
     </div>
   </section>
 
-  <section class="section" id="especialidades">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Especialidades</span>
-        <h2 class="section-title">{especialidades.length} especialidades médicas</h2>
-        <p class="section-sub">
-          Un equipo multidisciplinario que trabaja en red para darte un diagnóstico integral.
-        </p>
-      </div>
-      <ul class="specs">
-        {especialidades.map((e) => (
-          <li>
-            <Icon name="check" size={15} />
-            {e}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="testimonios">
+  <section class="section" id="testimonios">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Testimonios</span>
@@ -172,11 +128,6 @@ const serviciosDestacados = servicios.slice(0, 6);
     margin-inline: auto;
   }
 
-  .servicios__more {
-    text-align: center;
-    margin-top: 44px;
-  }
-
   .feature {
     display: flex;
     gap: 20px;
@@ -213,39 +164,6 @@ const serviciosDestacados = servicios.slice(0, 6);
   .feature p {
     color: var(--ink-soft);
     font-size: 0.94rem;
-  }
-
-  .specs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .specs li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 12px 20px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    box-shadow: var(--shadow-sm);
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-
-  .specs li:hover {
-    border-color: var(--brand-400);
-    color: var(--brand-700);
-  }
-
-  .specs svg {
-    color: var(--accent);
   }
 
   .testimonial {
