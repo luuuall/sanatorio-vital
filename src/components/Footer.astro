@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 import { site, servicios as serviciosData } from '../data/site';
 
 const servicios = serviciosData.slice(0, 4).map((s) => s.title);
@@ -10,12 +11,7 @@ const year = new Date().getFullYear();
     <div class="footer__grid">
       <div class="footer__brand">
         <a href="/" class="footer__logo">
-          <span aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" />
-            </svg>
-          </span>
-          Sanatorio <strong>Vital</strong>
+          <Logo />
         </a>
         <div class="footer__socials">
           <a href={site.instagram} target="_blank" rel="noopener" aria-label="Instagram">
@@ -90,29 +86,9 @@ const year = new Date().getFullYear();
   .footer__logo {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.3rem;
-    color: #fff;
     margin-bottom: 18px;
-  }
-
-  .footer__logo strong {
-    color: var(--accent);
-  }
-
-  .footer__logo span {
-    display: grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: var(--accent);
-    color: var(--brand-900);
-  }
-
-  .footer__logo svg {
-    width: 22px;
-    height: 22px;
+    --logo-size: 40px;
+    --logo-text: #fff;
   }
 
   .footer__socials {
